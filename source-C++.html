@@ -23,6 +23,16 @@
 			justify-content: center;
 			padding: 10px 0px;
 		}
+		.findSystem{
+			width: 1200px;
+			height: 700px;	
+			display: flex;
+			justify-content: center;
+		}
+		.just-a-box{
+			width: 300px;
+			display: block;
+		}
 		.header-left{
 			width: 500px;
 			font-size: 30px;
@@ -100,25 +110,28 @@
 		</div>
 	</div>
 	<div class="main">
-		<div id="box">更新中<br>先玩我</div>
+		<div class="findSystem">
+			<div class="just-a-box">
+				<select name="classNumberChoose" id="classNumber">
+					<option value="first">9/4第一堂大社課</option>
+				</select>
+				<button onclick="dataRequest();">查詢</button>
+				<div id="result"></div>
+			</div>
+		</div>
 	</div>
-
 	<script type="text/javascript">
-		let box=document.getElementById("box")
-		let drag=function(){
-			document.addEventListener("mousemove",move);
-			box.style.backgroundColor="#C3B091";
-		}
-		let move=function(e){
-			box.style.left=e.clientX-50+"px";
-			box.style.top=e.clientY-60+"px";
-		}
-		let drop=function(){
-			document.removeEventListener("mousemove",move);
-			box.style.backgroundColor="#006030"
-		}
-		box.addEventListener("mousedown",drag);
-		box.addEventListener("mouseup",drop);
+		let classNumber=document.getElementById("classNumber");
+		let result=document.getElementById("result");
+		function dataRequest(){
+			if(classNumber.value=='first'){
+				result.innerHTML="課程大綱：第一堂大社課就只是電研介紹<br><br><a href='document/CKEISC40th第一次大社課_電研介紹.pdf'>簡報PDF下載</a>&nbsp&nbsp&nbsp&nbsp<a href='document/CKEISC40th第一次大社課_電研介紹.pptx'>簡報PPT下載</a>";
+			}
+			else{
+				result.innerHTML="簡報尚未更新，請聯絡苜礿或是任何建電40屆的幹部";
+			}
+		};
+			
 	</script>
 </body>
 </html>
