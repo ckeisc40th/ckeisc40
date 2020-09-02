@@ -259,6 +259,7 @@ a.try-demo:hover{
 .footer-left-grid-big{
 	float:left;
 	width:47%;
+	display: inline;
 }
 .footer-left-grid-small{
 	float:right;
