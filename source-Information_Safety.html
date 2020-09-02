@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>教學資源首頁</title>
-    <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon">
+	<title>教學資源資訊安全</title>
 	<!--看到這裡不要噴，我很懶-->
-	<link rel="shortcut icon" href="images/icon.ico" type="image/x-icon">
 	<meta charset="utf-8">
 	<style type="text/css">
 
@@ -53,6 +51,17 @@
 		.announcement{
 			border-bottom: black solid 2px;
 		}
+		#box{
+			background-color:#006030;
+			position: fixed;
+			width: 100px;
+			height: 100px;
+			top: 200px;
+			left: 200px;
+			text-align: center;
+			color: white;
+			text-decoration: bold;
+		}
 		ul{
 			list-style-type: none;
 			display: flex;
@@ -82,8 +91,7 @@
 		<div class="header-left">CKEISC 40TH 教學資源網</div>
 		<div class="header-right">
 			<ul>
-				<ol><a href="index.html">社網首頁</a></ol>
-				<ol><a href="source.html">資源網首頁</a></ol>
+				<ol><a href="source.html">返回資源網首頁</a></ol>
 				<ol><a href="source-C++.html">大社課</a></ol>
 				<ol><a href="source-Python.html">Python</a></ol>
 				<ol><a href="source-Information_Safety.html">資訊安全</a></ol>
@@ -92,19 +100,25 @@
 		</div>
 	</div>
 	<div class="main">
-		<div class="main-left">
-			<div style="color: black; font-weight: bold; font-size: 20px;text-align: center;">資源更新公告</div>
-			<div>
-				<div class="announcement" style="padding: 0px 0px 0px 30px;">網站系統已啟用</div>
-				<div class="announcement"><img src="https://media.giphy.com/media/SRqevjRGESzEvPEKrt/giphy.gif" style="height: 30px;width: 30px;">20200902 上傳第一堂大社課_電研介紹PDF與PPT檔</div>
-			</div>
-		</div>
-		<div class="main-right">
-			<div style="color: black; font-weight: bold; font-size: 20px;text-align: center;">其他資訊公告</div>
-			<div class="announcement" style="padding: 0px 0px 0px 30px;">社團博覽會在2020/8/21號下午1:10至2:40</span></div>
-			<div class="announcement" style="padding: 12px 0px 0px 30px;">學弟加電研，一定要填第一志願喔!</div>
-			<div class="announcement" style="padding: 12px 0px 0px 30px;">高一選社期間為8/21~8/24，請大家要將電研填成第一志願才會有可能上喔!</div>
-		</div>
+		<div id="box">更新中<br>先玩我</div>
 	</div>
+
+	<script type="text/javascript">
+		let box=document.getElementById("box")
+		let drag=function(){
+			document.addEventListener("mousemove",move);
+			box.style.backgroundColor="#C3B091";
+		}
+		let move=function(e){
+			box.style.left=e.clientX-50+"px";
+			box.style.top=e.clientY-60+"px";
+		}
+		let drop=function(){
+			document.removeEventListener("mousemove",move);
+			box.style.backgroundColor="#006030"
+		}
+		box.addEventListener("mousedown",drag);
+		box.addEventListener("mouseup",drop);
+	</script>
 </body>
-</html>
+</html> 
