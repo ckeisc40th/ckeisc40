@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>教學資源大社課</title>
+	<!--看到這裡不要噴，我很懶-->
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="images/icon.ico" type="image/x-icon">
+	<style type="text/css">
+
+		body{
+			font-family: 微軟正黑體 , 新細明體;
+			margin: 0px;
+		}
+		.header{
+			background-color: 	#00AEAE;
+			display: flex;
+			justify-content: center;
+			padding:  10px 0px;
+			align-items: center;
+		}
+		.header-left{
+			width: 500px;
+			font-size: 30px;
+			font-weight: bold;
+			color: white;
+			justify-content: center;
+			align-items: center;
+		}
+		.header-right{
+			width: 700px;
+			display: flex;
+			align-items: center;
+			font-size: 16px;
+			line-height: 150%
+		}
+		.main{
+			display: flex;
+		}
+		ul{
+			list-style-type: none;
+			display: flex;
+			color: white;
+		}
+		ol a{
+			color: white;
+			font-weight: bold;
+			text-decoration: none;
+		}
+		li a{
+			color: black;
+			text-decoration: none;
+		}
+		li{
+			color: black;
+			font-size: 20px;
+			border-bottom: black solid 3px;
+		}
+		.button1{
+			background-color: #FF9224;
+			width: 30px;
+			height: 30px;
+			margin-top: 10px;
+			border-radius: 999em;
+		}
+		.button2{
+			background-color: #7373B9;
+			width: 30px;
+			height: 30px;
+			margin-top: 10px;
+			border-radius: 999em;
+		}
+		.button-box{
+			display: flex;
+			justify-content: center;
+			width: 70px;
+			height: 50px;
+			background-color: #BEBEBE;
+			border-radius: 10%;
+		}
+		.button-blank{
+			height: 10px;
+		}
+		#system1{
+			display: flex;
+			justify-items: center;
+
+		}
+		#system2{
+			display: flex;
+			justify-items: center;
+
+		}
+		.left{
+			width: 500px;
+			justify-content: center;
+			align-items: center;
+			color: black;
+			text-align: right;
+		}
+		.right{
+			width: 700px;
+			margin-left: 10px;
+		}
+	</style>
+</head>
+<body>
+	<!--
+		這是我苜礿手刻的教學資源網站
+	-->
+	<div class="header">
+		<div class="header-left">CKEISC 40TH 教學資源網</div>
+		<div class="header-right">
+			<ul>
+				<ol><a href="source.html">返回資源網首頁</a></ol>
+				<ol><a href="source-C++.html">大社課</a></ol>
+				<!--<ol><a href="source-algorithm.html">演算法</a></ol>-->
+				<ol><a href="source-Python.html">Python</a></ol>
+				<ol><a href="source-Information_Safety.html">資訊安全</a></ol>
+				<ol><a href="">網頁設計</a></ol>
+			</ul>
+		</div>
+	</div>
+	<div style="margin-top: 10px;"></div>
+	<div class="main">
+		<span style="text-align: right;">C++<br>語法</span>
+		<div class="button-box">
+			<div class="button1" id="button1" onclick="buttonClick(1);"></div>
+			<div class="button2" id="button2" onclick="buttonClick(2);"></div>		
+		</div>
+		<span style="display: block;">演算法</span>
+		<span style="color: red;">&nbsp&nbsp&nbsp&nbsp請點選橘色或藍色按鈕以查詢不同課程的簡報</span>
+		
+	</div>
+	<div id="system1">
+		<div class="left">
+			<select name="classNumberChoose" id="classNumber">
+				<option value='C1'>9/8第一堂C++語法小社</option>
+				<option value="C2">9/15第二堂C++語法小社</option>
+			</select>
+			<button onclick="dataRequest();">查詢</button>
+		</div>
+		<div class="right">
+			<div id="result"></div>
+		</div>
+	</div>
+	<div id="system2">
+		<div class="left">
+			明明還沒上課，為甚麼還要查詢呢？？？
+			<!--<select name="classNumberChoose" id="classNumber">
+				<option value='A1'>9/8第一堂C++語法小社</option>
+				<option value="C2">9/15第二堂C++語法小社</option>
+			</select>
+			<button onclick="dataRequest();">查詢</button>
+		-->
+		</div>
+		<div class="right">
+			<div id="result"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+			let button1=document.getElementById("button1");
+			let button2=document.getElementById("button2");
+			let system1=document.getElementById("system1");
+			let classNumber=document.getElementById("classNumber");
+			let result=document.getElementById("result");
+			button2.style.background="#BEBEBE";
+			system2.style.display="none";
+			function buttonClick(number){
+				result.innerHTML="";
+				if(number==2||button1.style.background=="#BEBEBE"){
+					button1.style.background='#FF9224';
+					button2.style.background='#BEBEBE';
+					system2.style.display="none";
+					system1.style.display="flex";
+				}
+				else{
+					button2.style.background="#7373B9";
+					button1.style.background="#BEBEBE";
+					system1.style.display="none";
+					system2.style.display="flex";
+				}
+			}
+			function dataRequest(){
+			switch(classNumber.value){
+				case 'C1':
+				result.innerHTML="課程大綱：<br>本次課程介紹<br>IDE、變數、輸入輸出、運算子以及if else<br><br><a href='document/C++  基礎語法第一堂0908.pdf'>簡報PDF下載</a>";
+				break;
+				case 'C2':
+				result.innerHTML="課程大綱：<br>本次課程介紹<br>陣列、迴圈與字串<br><br><a href='document/C++  基礎語法第二堂0915.pdf'>簡報PDF下載</a>";
+				break;
+				default:
+				result.innerHTML="簡報尚未更新，請聯絡苜礿或是任何建電40屆的幹部";
+			}
+		};
+	</script>
+</body>
+</html>
