@@ -35,6 +35,7 @@
 		}
 		.main{
 			display: flex;
+			justify-content: center;
 		}
 		ul{
 			list-style-type: none;
@@ -45,6 +46,7 @@
 			color: white;
 			font-weight: bold;
 			text-decoration: none;
+			font-size: 18px;
 		}
 		li a{
 			color: black;
@@ -54,6 +56,18 @@
 			color: black;
 			font-size: 20px;
 			border-bottom: black solid 3px;
+		}
+		.header-left a:visited{
+			color: white;
+			text-decoration: none;
+		}
+		.header-left a:link{
+			color: white;
+			text-decoration: none;
+		}
+		.header-left a:active{
+			color: white;
+			text-decoration: none;
 		}
 		.button1{
 			background-color: #FF9224;
@@ -108,12 +122,12 @@
 		這是我苜礿手刻的教學資源網站
 	-->
 	<div class="header">
-		<div class="header-left">CKEISC 40TH 教學資源網</div>
+		<div class="header-left"><a href="source.html">CKEISC 40TH 教學資源網</a></div>
 		<div class="header-right">
 			<ul>
-				<ol><a href="source.html">返回資源網首頁</a></ol>
+				<ol><a href="index.html">社網首頁</a></ol>
 				<ol><a href="source-C++.html">大社課</a></ol>
-				<!--<ol><a href="source-algorithm.html">演算法</a></ol>-->
+				<ol><a href="source-algorithm.html">演算法</a></ol>
 				<ol><a href="source-Python.html">Python</a></ol>
 				<ol><a href="source-Information_Safety.html">資訊安全</a></ol>
 				<ol><a href="">網頁設計</a></ol>
@@ -122,76 +136,80 @@
 	</div>
 	<div style="margin-top: 10px;"></div>
 	<div class="main">
-		<span style="text-align: right;">C++<br>語法</span>
-		<div class="button-box">
-			<div class="button1" id="button1" onclick="buttonClick(1);"></div>
-			<div class="button2" id="button2" onclick="buttonClick(2);"></div>		
-		</div>
-		<span style="display: block;">演算法</span>
-		<span style="color: red;">&nbsp&nbsp&nbsp&nbsp請點選橘色或藍色按鈕以查詢不同課程的簡報</span>
-		
+		<table border="4px solid" cellpadding="10px" style="font-size: 16px;">
+			<tr>
+				<th>上課日期及堂次</th>
+				<th>課程簡介</th>
+				<th>上課簡報</th>
+				<th>講師</th>
+			</tr>
+			<tr>
+				<td>9/8  第一堂</td>
+				<td>IDE、變數、運算子、輸入輸出與if else</td>
+				<td><a href="document/C++  基礎語法第一堂0908.pdf" target="_blank">簡報PDF下載</a></td>
+				<td rowspan="2">偏鄉</td>
+			</tr>
+			<tr>
+				<td>9/11 第二堂</td>
+				<td>迴圈與陣列</td>
+				<td><a href="document/C++  基礎語法第二堂0915.pdf" target="_blank">簡報PDF下載</a></td>
+			</tr>
+			<tr>
+				<td>9/22 第三堂</td>
+				<td></td>
+				<td>簡報PDF下載</td>
+			</tr>
+			<tr>
+				<td>9/29 第四堂</td>
+				<td></td>
+				<td>簡報PDF下載</td>
+			</tr>
+			<tr>
+				<td>10/20第五堂</td>
+				<td></td>
+				<td>簡報PDF下載</td>
+			</tr>
+			<tr>
+				<td>10/27第六堂</td>
+				<td></td>
+				<td>簡報PDF下載</td>
+			</tr>
+			<tr>
+				<td>11/3 第七堂</td>
+				<td></td>
+				<td>簡報PDF下載</td>
+			</tr>
+			<tr>
+				<td>11/10第八堂</td>
+				<td></td>
+				<td>簡報PDF下載</td>
+			</tr>
+			<tr>
+				<td>11/17第九堂</td>
+				<td></td>
+				<td>簡報PDF下載</td>
+			</tr>
+			<tr>
+				<td>12/8 第十堂</td>
+				<td></td>
+				<td>簡報PDF下載</td>
+			</tr>
+			<tr>
+				<td>12/15第十一堂</td>
+				<td></td>
+				<td>簡報PDF下載</td>
+			</tr>
+			<tr>
+				<td>12/22第十二堂</td>
+				<td></td>
+				<td>簡報PDF下載</td>
+			</tr>
+			<tr>
+				<td>12/29第十三堂</td>
+				<td></td>
+				<td>簡報PDF下載</td>
+			</tr>
+		</table>
 	</div>
-	<div id="system1">
-		<div class="left">
-			<select name="classNumberChoose" id="classNumber">
-				<option value='C1'>9/8第一堂C++語法小社</option>
-				<option value="C2">9/15第二堂C++語法小社</option>
-			</select>
-			<button onclick="dataRequest();">查詢</button>
-		</div>
-		<div class="right">
-			<div id="result"></div>
-		</div>
-	</div>
-	<div id="system2">
-		<div class="left">
-			明明還沒上課，為甚麼還要查詢呢？？？
-			<!--<select name="classNumberChoose" id="classNumber">
-				<option value='A1'>9/8第一堂C++語法小社</option>
-				<option value="C2">9/15第二堂C++語法小社</option>
-			</select>
-			<button onclick="dataRequest();">查詢</button>
-		-->
-		</div>
-		<div class="right">
-			<div id="result"></div>
-		</div>
-	</div>
-	<script type="text/javascript">
-			let button1=document.getElementById("button1");
-			let button2=document.getElementById("button2");
-			let system1=document.getElementById("system1");
-			let classNumber=document.getElementById("classNumber");
-			let result=document.getElementById("result");
-			button2.style.background="#BEBEBE";
-			system2.style.display="none";
-			function buttonClick(number){
-				result.innerHTML="";
-				if(number==2||button1.style.background=="#BEBEBE"){
-					button1.style.background='#FF9224';
-					button2.style.background='#BEBEBE';
-					system2.style.display="none";
-					system1.style.display="flex";
-				}
-				else{
-					button2.style.background="#7373B9";
-					button1.style.background="#BEBEBE";
-					system1.style.display="none";
-					system2.style.display="flex";
-				}
-			}
-			function dataRequest(){
-			switch(classNumber.value){
-				case 'C1':
-				result.innerHTML="課程大綱：<br>本次課程介紹<br>IDE、變數、輸入輸出、運算子以及if else<br><br><a href='document/C++  基礎語法第一堂0908.pdf'>簡報PDF下載</a>";
-				break;
-				case 'C2':
-				result.innerHTML="課程大綱：<br>本次課程介紹<br>陣列、迴圈與字串<br><br><a href='document/C++  基礎語法第二堂0915.pdf'>簡報PDF下載</a>";
-				break;
-				default:
-				result.innerHTML="簡報尚未更新，請聯絡苜礿或是任何建電40屆的幹部";
-			}
-		};
-	</script>
 </body>
 </html>

@@ -60,6 +60,18 @@
 			width: 700px;
 			margin-left: 10px;
 		}
+		.header-left a:visited{
+			color: white;
+			text-decoration: none;
+		}
+		.header-left a:link{
+			color: white;
+			text-decoration: none;
+		}
+		.header-left a:active{
+			color: white;
+			text-decoration: none;
+		}
 		.announcement{
 			border-bottom: black solid 2px;
 		}
@@ -83,6 +95,7 @@
 			color: white;
 			font-weight: bold;
 			text-decoration: none;
+			font-size: 18px;
 		}
 		li a{
 			color: black;
@@ -100,11 +113,11 @@
 		這是我苜礿手刻的教學資源網站
 	-->
 	<div class="header">
-		<div class="header-left">CKEISC 40TH 教學資源網</div>
+		<div class="header-left"><a href="source.html">CKEISC 40TH 教學資源網</a></div>
 		<div class="header-right">
 			<ul>
-				<ol><a href="source.html">返回資源網首頁</a></ol>
-				<!--<ol><a href="source-C++.html">大社課</a></ol>-->
+				<ol><a href="index.html">社網首頁</a></ol>
+				<ol><a href="source-C++.html">大社課</a></ol>
 				<ol><a href="source-algorithm.html">演算法</a></ol>
 				<ol><a href="source-Python.html">Python</a></ol>
 				<ol><a href="source-Information_Safety.html">資訊安全</a></ol>
@@ -113,30 +126,86 @@
 		</div>
 	</div>
 	<div class="main">
-		<div class="main-left">
-			<select name="classNumberChoose" id="classNumber">
-				<option value='1'>9/4第一堂大社課</option>
-			</select>
-			<button onclick="dataRequest();">查詢</button>
-		</div>	
-		<div class="main-right">
-			<div id="result"></div>
-		</div>
+		<table border="4px solid" cellpadding="10px" style="font-size: 16px;">
+			<tr>
+				<th>上課日期及堂次</th>
+				<th>上課內容</th>
+				<th>上課簡報</th>
+				<th>講師</th>
+			</tr>
+			<tr>
+				<td>9/4  第一堂</td>
+				<td>第一堂大社課就只是電研介紹而已喔！</td>
+				<td><a href="document/CKEISC40th第一次大社課_電研介紹.pdf" target="_blank">簡報PDF下載</a></td>
+				<td>苜礿</td>
+			</tr>
+			<tr>
+				<td>9/11 第二堂</td>
+				<td>IDE、變數、運算子以及輸入輸出</td>
+				<td><a title="講師尚未提供簡報">簡報PDF下載</a></td>
+				<td>金魚</td>
+			</tr>
+			<tr>
+				<td>9/25 第三堂</td>
+				<td></td>
+				<td>簡報PDF下載</td>
+			</tr>
+			<tr>
+				<td>9/26 第四堂</td>
+				<td></td>
+				<td>簡報PDF下載</td>
+			</tr>
+			<tr>
+				<td>10/16第五堂</td>
+				<td></td>
+				<td>簡報PDF下載</td>
+			</tr>
+			<tr>
+				<td>10/23第六堂</td>
+				<td></td>
+				<td>簡報PDF下載</td>
+			</tr>
+			<tr>
+				<td>10/30第七堂</td>
+				<td></td>
+				<td>簡報PDF下載</td>
+			</tr>
+			<tr>
+				<td>11/6 第八堂</td>
+				<td></td>
+				<td>簡報PDF下載</td>
+			</tr>
+			<tr>
+				<td>11/13第九堂</td>
+				<td></td>
+				<td>今日解題網址</td>
+			</tr>
+			<tr>
+				<td>11/20第十堂</td>
+				<td></td>
+				<td>簡報PDF下載</td>
+			</tr>
+			<tr>
+				<td>12/11第十一堂</td>
+				<td></td>
+				<td>簡報PDF下載</td>
+			</tr>
+			<tr>
+				<td>12/18第十二堂</td>
+				<td></td>
+				<td>簡報PDF下載</td>
+			</tr>
+			<tr>
+				<td>12/25第十三堂</td>
+				<td></td>
+				<td>今日解題網址</td>
+			</tr>
+			<tr>
+				<td>1/8  第十四堂</td>
+				<td></td>
+				<td>簡報PDF下載</td>
+			</tr>
+		</table>
 	</div>
-	<script type="text/javascript">
-		let classNumber=document.getElementById("classNumber");
-		let result=document.getElementById("result");
-		function dataRequest(){
-			switch(classNumber.value){
-				case '1':
-				result.innerHTML="課程大綱：<br>第一堂大社課就只是電研介紹<br><br><a href='document/CKEISC40th第一次大社課_電研介紹.pdf'>簡報PDF下載</a>";
-				break;
-				case '2':
-				default:
-				result.innerHTML="簡報尚未更新，請聯絡苜礿或是任何建電40屆的幹部";
-			}
-		};
-			
-	</script>
 </body>
 </html>

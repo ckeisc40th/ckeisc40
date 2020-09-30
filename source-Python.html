@@ -48,6 +48,18 @@
 			width: 500px;
 			margin-left: 10px;
 		}
+		.header-left a:visited{
+			color: white;
+			text-decoration: none;
+		}
+		.header-left a:link{
+			color: white;
+			text-decoration: none;
+		}
+		.header-left a:active{
+			color: white;
+			text-decoration: none;
+		}
 		.announcement{
 			border-bottom: black solid 2px;
 		}
@@ -71,6 +83,7 @@
 			color: white;
 			font-weight: bold;
 			text-decoration: none;
+			font-size: 18px;
 		}
 		li a{
 			color: black;
@@ -88,38 +101,83 @@
 		這是我苜礿手刻的教學資源網站
 	-->
 	<div class="header">
-		<div class="header-left">CKEISC 40TH 教學資源網</div>
+		<div class="header-left"><a href="source.html">CKEISC 40TH 教學資源網</a></div>
 		<div class="header-right">
 			<ul>
-				<ol><a href="source.html">返回資源網首頁</a></ol>
+				<ol><a href="index.html">社網首頁</a></ol>
 				<ol><a href="source-C++.html">大社課</a></ol>
 				<ol><a href="source-algorithm.html">演算法</a></ol>
-				<!--<ol><a href="source-Python.html">Python</a></ol>-->
+				<ol><a href="source-Python.html">Python</a></ol>
 				<ol><a href="source-Information_Safety.html">資訊安全</a></ol>
 				<ol><a href="">網頁設計</a></ol>
 			</ul>
 		</div>
 	</div>
 	<div class="main">
-		<div id="box">更新中<br>先玩我</div>
+		<table border="4px solid" cellpadding="10px" style="font-size: 16px;">
+			<tr>
+				<th>上課日期及堂次</th>
+				<th>上課內容</th>
+				<th>上課簡報</th>
+				<th>講師</th>
+			</tr>
+			<tr>
+				<td>9/17 第一堂</td>
+				<td></td>
+				<td><a>簡報PDF下載</a></td>
+				<td rowspan="2">金魚</td>
+			</tr>
+			<tr>
+				<td>9/24 第二堂</td>
+				<td></td>
+				<td><a>簡報PDF下載</a></td>
+			</tr>
+			<tr>
+				<td>10/22第三堂</td>
+				<td></td>
+				<td>簡報PDF下載</td>
+			</tr>
+			<tr>
+				<td>10/29第四堂</td>
+				<td></td>
+				<td>簡報PDF下載</td>
+			</tr>
+			<tr>
+				<td>11/5 第五堂</td>
+				<td></td>
+				<td>簡報PDF下載</td>
+			</tr>
+			<tr>
+				<td>11/12第六堂</td>
+				<td></td>
+				<td>簡報PDF下載</td>
+			</tr>
+			<tr>
+				<td>11/19第七堂</td>
+				<td></td>
+				<td>簡報PDF下載</td>
+			</tr>
+			<tr>
+				<td>12/3 第八堂</td>
+				<td></td>
+				<td>簡報PDF下載</td>
+			</tr>
+			<tr>
+				<td>12/10第九堂</td>
+				<td></td>
+				<td>簡報PDF下載</td>
+			</tr>
+			<tr>
+				<td>12/17第十堂</td>
+				<td></td>
+				<td>簡報PDF下載</td>
+			</tr>
+			<tr>
+				<td>12/24第十一堂</td>
+				<td></td>
+				<td>簡報PDF下載</td>
+			</tr>
+		</table>
 	</div>
-
-	<script type="text/javascript">
-		let box=document.getElementById("box")
-		let drag=function(){
-			document.addEventListener("mousemove",move);
-			box.style.backgroundColor="#C3B091";
-		}
-		let move=function(e){
-			box.style.left=e.clientX-50+"px";
-			box.style.top=e.clientY-60+"px";
-		}
-		let drop=function(){
-			document.removeEventListener("mousemove",move);
-			box.style.backgroundColor="#006030"
-		}
-		box.addEventListener("mousedown",drag);
-		box.addEventListener("mouseup",drop);
-	</script>
 </body>
 </html> 
